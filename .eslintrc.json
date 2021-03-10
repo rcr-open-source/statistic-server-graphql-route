@@ -1,0 +1,69 @@
+{
+    "extends": [
+        "plugin:@typescript-eslint/eslint-recommended",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:@typescript-eslint/recommended-requiring-type-checking"
+    ],
+    "rules": {
+        "max-len": ["error", {
+            "code": 120
+        }],
+        "linebreak-style": 0,
+        "no-continue": 0,
+        "@typescript-eslint/quotes": 0,
+        "@typescript-eslint/indent": 0,
+        "import/no-cycle": 0,
+        "import/prefer-default-export": 0,
+        "padded-blocks": [
+            "error",
+            {
+                "blocks": "always",
+                "classes": "always",
+                "switches": "always"
+            }
+        ],
+        "@typescript-eslint/require-await": 0,
+        "no-param-reassign": 0,
+        "lines-between-class-members": [
+            "error",
+            "always"
+        ],
+        "object-curly-newline": [
+            "error",
+            {
+                "ObjectExpression": "always",
+                "ObjectPattern": {
+                    "multiline": true
+                },
+                "ImportDeclaration": {
+                    "multiline": true,
+                    "minProperties": 3
+                },
+                "ExportDeclaration": {
+                    "multiline": true,
+                    "minProperties": 3
+                }
+            }
+        ],
+        "object-property-newline": [
+            "error"
+        ],
+        "indent": [
+            "error",
+            4
+        ],
+        "comma-dangle": [
+            "error",
+            "always-multiline"
+        ],
+        "eol-last": [
+            "error",
+            "always"
+        ],
+        "class-methods-use-this": 0
+    },
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "project": "./tsconfig.json"
+    }
+}

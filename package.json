@@ -1,0 +1,74 @@
+{
+  "name": "@umk-stat/statistic-server-graphql-route",
+  "version": "0.1.0",
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "build-package": "tsc",
+    "tq": "ts-node ./src/connection.test.ts",
+    "gen": "ts-node ./src/utils/generator/index.ts",
+    "build-package:watch": "umk-build --watch",
+    "lint:fix": "eslint ./src/**/*.{js,ts,tsx} --fix",
+    "test": "jest",
+    "statjest": "jest --coverage"
+  },
+  "license": "ISC",
+  "typings": "dist/index.d.ts",
+  "dependencies": {
+    "@umk-stat/statistic-server-database": "^0.0.1",
+    "@umk-stat/statistic-server-core": "^0.1.0",
+    "@umk-stat/statistic-server-system-graphql": "^0.1.0",
+    "@umk-stat/statistic-server-graphql-logs-graphql": "^0.1.0",
+    "class-validator": "^0.12.2",
+    "dataloader": "^2.0.0",
+    "express-graphql": "^0.11.0",
+    "graphql": "^15.3.0",
+    "graphql-subscriptions": "^1.1.0",
+    "reflect-metadata": "^0.1.13",
+    "type-graphql": "^1.0.0-rc.3",
+    "winston": "^3.3.3"
+  },
+  "devDependencies": {
+    "@types/express-graphql": "^0.9.0",
+    "@types/graphql": "^14.5.0",
+    "@types/jest": "^25.1.0",
+    "@types/node": "^14.0.27",
+    "@types/socket.io": "^2.1.8",
+    "@types/winston": "^2.4.4",
+    "jest": "^25.0.0",
+    "ts-jest": "^24.0.0",
+    "typescript": "^3.9.7"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    },
+    "testMatch": [
+      "<rootDir>/tests/**/*.{spec,test}.{js,jsx,ts,tsx}"
+    ],
+    "transformIgnorePatterns": [
+      "[/\\\\]node_modules[/\\\\].+\\.(js|jsx|ts|tsx)$",
+      "^.+\\.module\\.(css|sass|scss)$"
+    ],
+    "moduleFileExtensions": [
+      "web.js",
+      "js",
+      "web.ts",
+      "ts",
+      "web.tsx",
+      "tsx",
+      "json",
+      "web.jsx",
+      "jsx",
+      "node"
+    ],
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx,ts,tsx}"
+    ],
+    "globals": {
+      "ts-jest": {
+        "diagnostics": false
+      }
+    }
+  }
+}
