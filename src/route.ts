@@ -10,6 +10,10 @@ import { Logger } from "winston";
 import { Context, GlobalResolver } from "@umk-stat/statistic-server-core";
 import { SystemResolver } from "@umk-stat/statistic-server-system-graphql";
 import { BackendLogsResolver } from "@umk-stat/statistic-server-graphql-logs-graphql";
+import { ViewerResolver } from "@umk-stat/statistic-server-client-graphql";
+import { TargetResolver } from  "@umk-stat/statistic-server-client-graphql";
+import { EventResolver } from  "@umk-stat/statistic-server-client-graphql";
+import { ViewerTargetTargetsResolver } from  "@umk-stat/statistic-server-client-graphql";
 
 
 export function getMiddleware(
@@ -25,6 +29,10 @@ export function getMiddleware(
     const resolvers: NonEmptyArray<Function> = [
         BackendLogsResolver,
         SystemResolver,
+        ViewerResolver,
+        TargetResolver,
+        EventResolver,
+        ViewerTargetTargetsResolver,
         GlobalResolver,
     ];
 

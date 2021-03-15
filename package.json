@@ -18,6 +18,7 @@
     "@umk-stat/statistic-server-database": "0.0.1",
     "@umk-stat/statistic-server-core": "0.1.0",
     "@umk-stat/statistic-server-system-graphql": "0.1.0",
+    "@umk-stat/statistic-server-client-graphql": "0.1.0",
     "@umk-stat/statistic-server-graphql-logs-graphql": "0.1.0",
     "class-validator": "^0.12.2",
     "dataloader": "^2.0.0",
