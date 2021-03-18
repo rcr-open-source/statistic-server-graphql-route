@@ -13,11 +13,13 @@ import { BackendLogsResolver } from "@umk-stat/statistic-server-graphql-logs-gra
 import { ViewerResolver } from "@umk-stat/statistic-server-client-graphql";
 import { TargetResolver } from  "@umk-stat/statistic-server-client-graphql";
 import { EventResolver } from  "@umk-stat/statistic-server-client-graphql";
-import { ViewerTargetTargetsResolver } from  "@umk-stat/statistic-server-client-graphql";
+import { ViewerEventEventsResolver } from  "@umk-stat/statistic-server-client-graphql";
+import { ClientAPI } from "@umk-stat/statistic-server-client-database";
 
 
 export function getMiddleware(
     databaseAPI: API,
+    clientDatabaseApi: ClientAPI,
     infoLogger: Logger,
     errorLogger: Logger,
 ): {
@@ -32,7 +34,7 @@ export function getMiddleware(
         ViewerResolver,
         TargetResolver,
         EventResolver,
-        ViewerTargetTargetsResolver,
+        ViewerEventEventsResolver,
         GlobalResolver,
     ];
 
@@ -43,6 +45,7 @@ export function getMiddleware(
             path: `${__dirname}/../../../schema_statistic.gql`,
         },
     });
+
     const func: Options = async (
         request: IncomingMessage,
     ): Promise<OptionsData> => {
@@ -63,6 +66,7 @@ export function getMiddleware(
             graphiql: true,
             context: new Context(
                 databaseAPI,
+                clientDatabaseApi,
                 infoLogger,
                 errorLogger,
                 graphqlMap,
